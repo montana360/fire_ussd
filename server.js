@@ -5,6 +5,7 @@ const db = require("./src/db/connection");
 
 const PORT = process.env.PORT || 3000;
 
+
 async function startServer() {
   try {
     const connection = await db.getConnection();
@@ -13,7 +14,7 @@ async function startServer() {
 
     connection.release();
 
-    app.listen(PORT, () => {
+    app.listen(PORT,"0.0.0.0", () => {
       console.log(`Server running on port ${PORT}`);
     });
 
